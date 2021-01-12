@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from '../models/user';
-import { auth } from 'firebase/app';
+import { auth } from "firebase/app";
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +43,14 @@ export class AuthService {
 
   loginGoogleUser() {
     return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
+  loginFacebookUser() {
+    return this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
+  }
+
+  loginTwitterUser() {
+    return this.afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
   }
 }
 

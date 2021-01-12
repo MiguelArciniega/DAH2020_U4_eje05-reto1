@@ -51,6 +51,20 @@ export class LoginPage implements OnInit {
       }).catch(err => console.log('err', err.message));
   }
 
+  onLoginFacebook(): void {
+    this.authService.loginFacebookUser()
+      .then((res) => {
+        this.onLoginRedirect();
+      }).catch(err => console.log('err', err.message));
+  }
+
+  onLoginTwitter(): void {
+    this.authService.loginTwitterUser()
+      .then((res) => {
+        this.onLoginRedirect();
+      }).catch(err => console.log('err', err.message));
+  }
+
   onLoginRedirect(): void {
     this.router.navigate(['/home']);
   }
